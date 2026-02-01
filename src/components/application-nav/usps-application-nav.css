@@ -1,0 +1,123 @@
+:host {
+  display: block;
+  font-family: var(--usps-font-family);
+}
+
+.usps-application-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--usps-space-16);
+  flex-wrap: wrap;
+}
+
+.app-title h1 {
+  margin: 0;
+  font-size: var(--usps-font-size-h1);
+  color: var(--usps-color-primary);
+}
+
+.app-nav {
+  margin-left: auto;
+}
+
+.app-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--usps-space-8);
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.app-nav-item {
+  display: inline-flex;
+  align-items: center;
+  color: var(--usps-color-primary);
+}
+
+.app-nav-item h5 {
+  margin: 0;
+  font-size: var(--usps-font-size-h5);
+  font-weight: var(--usps-font-weight-bold);
+}
+
+.app-nav-item a {
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: var(--usps-space-4);
+}
+
+.app-nav-item.active a,
+.app-nav-item.active h5 {
+  border-bottom: 2px solid var(--usps-color-red);
+}
+
+.app-nav-divider {
+  margin-left: var(--usps-space-8);
+  color: var(--usps-color-primary);
+}
+
+@media (max-width: 768px) {
+  .usps-application-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-nav {
+    margin-left: 0;
+  }
+}
+
+.usps-application-nav.mobile {
+  align-items: flex-start;
+  gap: var(--usps-space-8);
+}
+
+.mobile-title {
+  margin: 0;
+  font-size: var(--usps-font-size-h4);
+  color: var(--usps-color-primary);
+}
+
+.mobile-label {
+  font-size: var(--usps-font-size-small);
+  color: var(--usps-color-primary);
+}
+
+.mobile-select {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.mobile-select select {
+  width: 100%;
+  appearance: none;
+  border: 1px solid var(--usps-color-primary);
+  border-radius: var(--usps-radius-xsm);
+  padding: var(--usps-space-12) var(--usps-space-32) var(--usps-space-12)
+    var(--usps-space-16);
+  font-size: var(--usps-font-size-body);
+  color: var(--usps-color-primary);
+  background-color: var(--usps-color-white);
+}
+
+.mobile-select select:focus-visible {
+  outline: 2px solid var(--usps-color-accent-blue);
+  outline-offset: 2px;
+}
+
+.mobile-caret {
+  position: absolute;
+  right: var(--usps-space-12);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid var(--usps-color-primary);
+  pointer-events: none;
+}

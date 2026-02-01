@@ -8,6 +8,7 @@ Use this checklist every time a new component is added.
 - [ ] Tokens and spacing follow `src/tokens/tokens.css`.
 - [ ] Variants/states match the USPS style guide (sizes, hover/active/disabled, typography, spacing).
 - [ ] Keyboard interactions and focus states are implemented where applicable.
+- [ ] Update `components.md` with component coverage and gaps.
 
 ## Stories
 - [ ] Story added in `src/stories/usps-<name>.stories.ts`.
@@ -21,6 +22,7 @@ Use this checklist every time a new component is added.
 ## Bindings & Exports
 - [ ] Component exported via Stencil build (types in `src/components.d.ts` are updated after build).
 - [ ] Framework bindings updated (React/Vue/Angular wrappers or docs) if applicable.
+- [ ] Documentation updated (README + TODO as needed).
 
 ## Accessibility
 - [ ] Semantic HTML is correct (button vs link, headings, lists).

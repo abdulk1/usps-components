@@ -103,6 +103,14 @@ Supported themes: `light` (default), `dark`.
 | Grid              | `usps-grid`       | CSS Grid layout                      |
 | Stack             | `usps-stack`      | Flexbox row/column layout            |
 | Container         | `usps-container`  | Max-width centered container         |
+| Banner            | `usps-banner`     | Hero/marketing content banner        |
+| Callout           | `usps-callout`    | Single or multi-column callouts      |
+| Drawer            | `usps-drawer`     | Informative/detailed drawers         |
+
+### Application
+| Component         | Tag                    | Description                       |
+|-------------------|------------------------|-----------------------------------|
+| Application Nav   | `usps-application-nav` | In-app navigation (desktop/mobile) |
 
 ### Feedback
 | Component         | Tag               | Description                          |

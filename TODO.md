@@ -2,11 +2,16 @@
 
 ## High Priority
 
-- [ ] **Framework bindings** — Add Stencil output targets for React, Angular, and Vue wrapper packages (`@stencil/react-output-target`, `@stencil/angular-output-target`, `@stencil/vue-output-target`)
+- [ ] **Framework bindings** — Add Stencil output targets for Angular and Vue wrapper packages (`@stencil/angular-output-target`, `@stencil/vue-output-target`)
 - [ ] **Unit tests** — Add Jest/Stencil testing for all components (props, events, state changes, slot rendering)
 - [x] **Accessibility audit** — Run axe-core or Lighthouse audits against every component and fix any WCAG 2.1 AA violations
 - [ ] **Keyboard navigation testing** — Verify Tab/Enter/Escape/Arrow key behavior for all interactive components (modal, select, radio, toggle, tooltip)
 - [ ] **Focus trap in modal** — Current focus trap uses `shadowRoot.querySelectorAll`; improve to handle slotted focusable content
+ 
+## Completed
+
+- [x] **React bindings** — Added Stencil React output target and wrapper package scaffolding
+- [x] **Storybook GitHub Pages** — Deploy Storybook via GitHub Actions to Pages
 
 ## Design Token Gaps
 

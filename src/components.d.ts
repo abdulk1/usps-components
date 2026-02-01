@@ -20,6 +20,24 @@ export namespace Components {
          */
         "variant": 'info' | 'success' | 'warning' | 'error';
     }
+    interface UspsApplicationNav {
+        /**
+          * @default '[]'
+         */
+        "items": string | Array<{ label: string; href?: string; active?: boolean; external?: boolean }>;
+        /**
+          * @default 'desktop'
+         */
+        "layout": 'desktop' | 'mobile';
+        /**
+          * @default 'Go to:'
+         */
+        "mobileLabel": string;
+        /**
+          * @default ''
+         */
+        "title": string;
+    }
     interface UspsBadge {
         /**
           * @default ''
@@ -455,6 +473,10 @@ export interface UspsAlertCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUspsAlertElement;
 }
+export interface UspsApplicationNavCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUspsApplicationNavElement;
+}
 export interface UspsButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUspsButtonElement;
@@ -503,6 +525,9 @@ declare global {
     interface HTMLUspsAlertElementEventMap {
         "uspsDismiss": void;
     }
+    interface HTMLUspsApplicationNavElementEventMap {
+        "uspsNavigate": { label: string; href?: string; active?: boolean; external?: boolean };
+    }
     interface HTMLUspsAlertElement extends Components.UspsAlert, HTMLStencilElement {
         addEventListener<K extends keyof HTMLUspsAlertElementEventMap>(type: K, listener: (this: HTMLUspsAlertElement, ev: UspsAlertCustomEvent<HTMLUspsAlertElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -516,6 +541,20 @@ declare global {
     var HTMLUspsAlertElement: {
         prototype: HTMLUspsAlertElement;
         new (): HTMLUspsAlertElement;
+    };
+    interface HTMLUspsApplicationNavElement extends Components.UspsApplicationNav, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLUspsApplicationNavElementEventMap>(type: K, listener: (this: HTMLUspsApplicationNavElement, ev: UspsApplicationNavCustomEvent<HTMLUspsApplicationNavElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLUspsApplicationNavElementEventMap>(type: K, listener: (this: HTMLUspsApplicationNavElement, ev: UspsApplicationNavCustomEvent<HTMLUspsApplicationNavElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLUspsApplicationNavElement: {
+        prototype: HTMLUspsApplicationNavElement;
+        new (): HTMLUspsApplicationNavElement;
     };
     interface HTMLUspsBadgeElement extends Components.UspsBadge, HTMLStencilElement {
     }
@@ -794,6 +833,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "usps-alert": HTMLUspsAlertElement;
+        "usps-application-nav": HTMLUspsApplicationNavElement;
         "usps-badge": HTMLUspsBadgeElement;
         "usps-banner": HTMLUspsBannerElement;
         "usps-button": HTMLUspsButtonElement;
@@ -836,6 +876,25 @@ declare namespace LocalJSX {
           * @default 'info'
          */
         "variant"?: 'info' | 'success' | 'warning' | 'error';
+    }
+    interface UspsApplicationNav {
+        /**
+          * @default '[]'
+         */
+        "items"?: string | Array<{ label: string; href?: string; active?: boolean; external?: boolean }>;
+        /**
+          * @default 'desktop'
+         */
+        "layout"?: 'desktop' | 'mobile';
+        /**
+          * @default 'Go to:'
+         */
+        "mobileLabel"?: string;
+        "onUspsNavigate"?: (event: UspsApplicationNavCustomEvent<{ label: string; href?: string; active?: boolean; external?: boolean }>) => void;
+        /**
+          * @default ''
+         */
+        "title"?: string;
     }
     interface UspsBadge {
         /**
@@ -1284,6 +1343,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "usps-alert": UspsAlert;
+        "usps-application-nav": UspsApplicationNav;
         "usps-badge": UspsBadge;
         "usps-banner": UspsBanner;
         "usps-button": UspsButton;
@@ -1316,6 +1376,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "usps-alert": LocalJSX.UspsAlert & JSXBase.HTMLAttributes<HTMLUspsAlertElement>;
+            "usps-application-nav": LocalJSX.UspsApplicationNav & JSXBase.HTMLAttributes<HTMLUspsApplicationNavElement>;
             "usps-badge": LocalJSX.UspsBadge & JSXBase.HTMLAttributes<HTMLUspsBadgeElement>;
             "usps-banner": LocalJSX.UspsBanner & JSXBase.HTMLAttributes<HTMLUspsBannerElement>;
             "usps-button": LocalJSX.UspsButton & JSXBase.HTMLAttributes<HTMLUspsButtonElement>;
