@@ -1,0 +1,11 @@
+[data-theme='dark'] {
+  --usps-theme-bg: #1a1a2e;
+  --usps-theme-text: var(--usps-color-white);
+  --usps-theme-text-secondary: var(--usps-color-gray-dark);
+  --usps-theme-primary: #6666aa;
+  --usps-theme-link: #79b8ff;
+  --usps-theme-border: #444466;
+  --usps-theme-surface: #2a2a4a;
+  --usps-theme-surface-hover: #3a3a5a;
+  --usps-theme-overlay: rgba(0, 0, 0, 0.6);
+}

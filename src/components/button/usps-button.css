@@ -1,0 +1,91 @@
+.usps-button {
+  font-family: var(--usps-font-family);
+  font-size: var(--usps-font-size-body);
+  font-weight: var(--usps-font-weight-bold);
+  text-transform: capitalize;
+  border: 2px solid transparent;
+  border-radius: var(--usps-radius-xsm);
+  padding: var(--usps-space-12) var(--usps-space-20);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--usps-space-8);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  line-height: 1;
+}
+
+.usps-button:focus-visible {
+  outline: 2px solid var(--usps-color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* Primary */
+.variant-primary {
+  background-color: var(--usps-color-primary);
+  color: var(--usps-color-white);
+  border-color: var(--usps-color-primary);
+}
+
+.variant-primary:hover:not(:disabled) {
+  background-color: #282852;
+}
+
+.variant-primary:active:not(:disabled) {
+  background-color: #1e1e3e;
+}
+
+/* Secondary */
+.variant-secondary {
+  background-color: var(--usps-color-white);
+  color: var(--usps-color-primary);
+  border-color: var(--usps-color-primary);
+}
+
+.variant-secondary:hover:not(:disabled) {
+  background-color: var(--usps-color-gray-light);
+}
+
+.variant-secondary:active:not(:disabled) {
+  background-color: var(--usps-color-gray-hover);
+}
+
+/* Ecommerce */
+.variant-ecommerce {
+  background-color: var(--usps-color-green);
+  color: var(--usps-color-white);
+  border-color: var(--usps-color-green);
+}
+
+.variant-ecommerce:hover:not(:disabled) {
+  background-color: #1a6c3a;
+}
+
+.variant-ecommerce:active:not(:disabled) {
+  background-color: #14532c;
+}
+
+/* Inactive */
+.variant-inactive {
+  background-color: var(--usps-color-gray-dark);
+  color: var(--usps-color-gray-text);
+  border-color: var(--usps-color-gray-dark);
+  cursor: default;
+}
+
+/* Disabled */
+.usps-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.size-sm {
+  font-size: var(--usps-font-size-small);
+  padding: var(--usps-space-8) var(--usps-space-16);
+}
+
+.size-lg {
+  font-size: var(--usps-font-size-h4);
+  padding: var(--usps-space-16) var(--usps-space-24);
+}

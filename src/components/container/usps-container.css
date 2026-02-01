@@ -1,0 +1,23 @@
+.usps-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--usps-space-16);
+  padding-right: var(--usps-space-16);
+}
+
+.size-sm {
+  max-width: 640px;
+}
+
+.size-md {
+  max-width: 960px;
+}
+
+.size-lg {
+  max-width: 1200px;
+}
+
+.size-full {
+  max-width: 100%;
+}

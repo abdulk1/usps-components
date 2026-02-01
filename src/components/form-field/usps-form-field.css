@@ -1,0 +1,27 @@
+.usps-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--usps-space-4);
+  font-family: var(--usps-font-family);
+}
+
+.form-field-label {
+  font-size: var(--usps-font-size-small);
+  font-weight: var(--usps-font-weight-medium);
+  color: var(--usps-color-black);
+}
+
+.required {
+  color: var(--usps-color-red);
+  margin-left: 2px;
+}
+
+.form-field-hint {
+  font-size: var(--usps-font-size-fine);
+  color: var(--usps-color-gray-text);
+}
+
+.form-field-error {
+  font-size: var(--usps-font-size-fine);
+  color: var(--usps-color-red);
+}

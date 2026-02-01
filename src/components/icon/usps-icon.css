@@ -1,0 +1,56 @@
+.usps-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.usps-icon ::slotted(svg) {
+  width: 100%;
+  height: 100%;
+}
+
+.size-xsm {
+  width: var(--usps-icon-size-xsm);
+  height: var(--usps-icon-size-xsm);
+}
+
+.size-sm {
+  width: var(--usps-icon-size-sm);
+  height: var(--usps-icon-size-sm);
+}
+
+.size-md {
+  width: var(--usps-icon-size-md);
+  height: var(--usps-icon-size-md);
+}
+
+.size-lg {
+  width: var(--usps-icon-size-lg);
+  height: var(--usps-icon-size-lg);
+}
+
+.size-xlg {
+  width: var(--usps-icon-size-xlg);
+  height: var(--usps-icon-size-xlg);
+}
+
+.color-default {
+  color: var(--usps-color-primary);
+}
+
+.color-success {
+  color: var(--usps-color-green);
+}
+
+.color-failure {
+  color: var(--usps-color-red);
+}
+
+.color-warning {
+  color: var(--usps-color-alert-warning-accent);
+}
+
+.color-gray {
+  color: var(--usps-color-gray-text);
+}

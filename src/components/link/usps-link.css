@@ -1,0 +1,38 @@
+.usps-link {
+  font-family: var(--usps-font-family);
+  font-weight: var(--usps-font-weight-bold);
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--usps-space-4);
+  transition: text-decoration 0.2s, color 0.2s;
+}
+
+.usps-link:hover {
+  text-decoration: none;
+}
+
+.usps-link:focus-visible {
+  outline: 2px solid var(--usps-color-accent-blue);
+  outline-offset: 2px;
+}
+
+.variant-body {
+  color: var(--usps-color-link-blue);
+  font-size: var(--usps-font-size-body);
+}
+
+.variant-heading {
+  color: var(--usps-color-primary);
+  font-size: var(--usps-font-size-h4);
+}
+
+.variant-ecommerce {
+  color: var(--usps-color-green);
+  font-size: var(--usps-font-size-body);
+}
+
+.external-icon {
+  font-size: 0.8em;
+}

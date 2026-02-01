@@ -1,0 +1,73 @@
+:root {
+  /* ===== Colors ===== */
+  --usps-color-primary: #333366;
+  --usps-color-white: #FFFFFF;
+  --usps-color-black: #000000;
+  --usps-color-red: #E71921;
+  --usps-color-green: #218748;
+  --usps-color-accent-blue: #3573B1;
+  --usps-color-link-blue: #005EA2;
+  --usps-color-gray-light: #F7F7F7;
+  --usps-color-gray-hover: #EDEDED;
+  --usps-color-gray-dark: #D8D8D8;
+  --usps-color-gray-text-hover: #999999;
+  --usps-color-gray-text: #595959;
+
+  /* Alert backgrounds */
+  --usps-color-alert-info-bg: #E7F6F8;
+  --usps-color-alert-success-bg: #ECF3EC;
+  --usps-color-alert-warning-bg: #FAF3D1;
+  --usps-color-alert-error-bg: #F4E3DB;
+
+  /* Alert accents */
+  --usps-color-alert-info-accent: #3573B1;
+  --usps-color-alert-success-accent: #218748;
+  --usps-color-alert-warning-accent: #FFBE2E;
+  --usps-color-alert-error-accent: #E71921;
+
+  /* ===== Typography ===== */
+  --usps-font-family: 'Helvetica Neue', Arial, sans-serif;
+  --usps-font-weight-light: 300;
+  --usps-font-weight-regular: 400;
+  --usps-font-weight-medium: 500;
+  --usps-font-weight-bold: 700;
+
+  --usps-font-size-h1: 32px;
+  --usps-font-size-h2: 28px;
+  --usps-font-size-h3: 22px;
+  --usps-font-size-h4: 18px;
+  --usps-font-size-h5: 16px;
+  --usps-font-size-h6: 14px;
+
+  --usps-font-size-body: 16px;
+  --usps-line-height-body: 22px;
+  --usps-font-size-small: 14px;
+  --usps-line-height-small: 20px;
+  --usps-font-size-fine: 12px;
+
+  /* ===== Spacing (4px base) ===== */
+  --usps-space-4: 4px;
+  --usps-space-8: 8px;
+  --usps-space-12: 12px;
+  --usps-space-16: 16px;
+  --usps-space-20: 20px;
+  --usps-space-24: 24px;
+  --usps-space-32: 32px;
+  --usps-space-40: 40px;
+  --usps-space-48: 48px;
+  --usps-space-56: 56px;
+  --usps-space-64: 64px;
+  --usps-space-72: 72px;
+  --usps-space-80: 80px;
+
+  /* ===== Border Radius ===== */
+  --usps-radius-xsm: 4px;
+  --usps-radius-sm: 8px;
+
+  /* ===== Icon Sizes ===== */
+  --usps-icon-size-xsm: 16px;
+  --usps-icon-size-sm: 24px;
+  --usps-icon-size-md: 32px;
+  --usps-icon-size-lg: 48px;
+  --usps-icon-size-xlg: 64px;
+}

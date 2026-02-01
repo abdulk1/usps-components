@@ -1,0 +1,51 @@
+.usps-card {
+  background-color: var(--usps-color-white);
+  border: 1px solid var(--usps-color-gray-dark);
+  border-radius: var(--usps-radius-sm);
+  overflow: hidden;
+  font-family: var(--usps-font-family);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-image ::slotted(*) {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  padding: var(--usps-space-24);
+  flex: 1;
+}
+
+.card-heading {
+  font-size: var(--usps-font-size-h3);
+  font-weight: var(--usps-font-weight-bold);
+  margin: 0 0 var(--usps-space-12) 0;
+  color: var(--usps-color-primary);
+}
+
+.card-footer {
+  padding: 0 var(--usps-space-24) var(--usps-space-24);
+}
+
+.card-footer:empty {
+  display: none;
+}
+
+.variant-small .card-content {
+  padding: var(--usps-space-16);
+}
+
+.variant-small .card-heading {
+  font-size: var(--usps-font-size-h5);
+}
+
+.variant-small .card-footer {
+  padding: 0 var(--usps-space-16) var(--usps-space-16);
+}

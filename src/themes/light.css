@@ -1,0 +1,12 @@
+:root,
+[data-theme='light'] {
+  --usps-theme-bg: var(--usps-color-white);
+  --usps-theme-text: var(--usps-color-black);
+  --usps-theme-text-secondary: var(--usps-color-gray-text);
+  --usps-theme-primary: var(--usps-color-primary);
+  --usps-theme-link: var(--usps-color-link-blue);
+  --usps-theme-border: var(--usps-color-gray-dark);
+  --usps-theme-surface: var(--usps-color-white);
+  --usps-theme-surface-hover: var(--usps-color-gray-hover);
+  --usps-theme-overlay: rgba(51, 51, 102, 0.5);
+}

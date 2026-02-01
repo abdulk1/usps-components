@@ -1,0 +1,32 @@
+.usps-badge {
+  font-family: var(--usps-font-family);
+  font-size: var(--usps-font-size-fine);
+  font-weight: var(--usps-font-weight-bold);
+  padding: var(--usps-space-4) var(--usps-space-8);
+  border-radius: var(--usps-radius-xsm);
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.variant-info {
+  background-color: var(--usps-color-alert-info-bg);
+  color: var(--usps-color-alert-info-accent);
+}
+
+.variant-success {
+  background-color: var(--usps-color-alert-success-bg);
+  color: var(--usps-color-alert-success-accent);
+}
+
+.variant-warning {
+  background-color: var(--usps-color-alert-warning-bg);
+  color: #856404;
+}
+
+.variant-error {
+  background-color: var(--usps-color-alert-error-bg);
+  color: var(--usps-color-alert-error-accent);
+}
