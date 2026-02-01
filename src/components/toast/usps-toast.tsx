@@ -26,7 +26,7 @@ export class UspsToast {
     }
   }
 
-  componentDidLoad() {
+  componentWillLoad() {
     if (this.open) {
       this.show();
     }
