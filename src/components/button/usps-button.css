@@ -28,7 +28,8 @@
 }
 
 .variant-primary:hover:not(:disabled) {
-  background-color: #282852;
+  background-color: var(--usps-color-gray-hover);
+  color: var(--usps-color-primary);
 }
 
 .variant-primary:active:not(:disabled) {
@@ -43,7 +44,7 @@
 }
 
 .variant-secondary:hover:not(:disabled) {
-  background-color: var(--usps-color-gray-light);
+  background-color: var(--usps-color-gray-hover);
 }
 
 .variant-secondary:active:not(:disabled) {
@@ -58,10 +59,44 @@
 }
 
 .variant-ecommerce:hover:not(:disabled) {
-  background-color: #1a6c3a;
+  background-color: var(--usps-color-gray-hover);
+  color: var(--usps-color-green);
 }
 
 .variant-ecommerce:active:not(:disabled) {
+  background-color: #14532c;
+}
+
+/* Icon Combo */
+.variant-icon-combo {
+  background-color: var(--usps-color-white);
+  color: var(--usps-color-primary);
+  border-color: var(--usps-color-primary);
+  flex-direction: column;
+}
+
+.variant-icon-combo:hover:not(:disabled) {
+  background-color: var(--usps-color-gray-hover);
+}
+
+.variant-icon-combo.is-selected:not(:disabled) {
+  background-color: var(--usps-color-primary);
+  color: var(--usps-color-white);
+}
+
+/* Ecommerce Icon */
+.variant-ecommerce-icon {
+  background-color: var(--usps-color-green);
+  color: var(--usps-color-white);
+  border-color: var(--usps-color-green);
+}
+
+.variant-ecommerce-icon:hover:not(:disabled) {
+  background-color: var(--usps-color-gray-hover);
+  color: var(--usps-color-green);
+}
+
+.variant-ecommerce-icon:active:not(:disabled) {
   background-color: #14532c;
 }
 

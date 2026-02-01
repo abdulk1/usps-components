@@ -1,0 +1,108 @@
+:host {
+  display: inline-block;
+  font-family: var(--usps-font-family);
+}
+
+.usps-split-button {
+  position: relative;
+  display: inline-flex;
+  border-radius: var(--usps-radius-xsm);
+  border: 2px solid var(--usps-color-primary);
+  overflow: hidden;
+}
+
+.split-primary,
+.split-toggle {
+  border: none;
+  font-size: var(--usps-font-size-body);
+  font-weight: var(--usps-font-weight-bold);
+  text-transform: capitalize;
+  padding: var(--usps-space-12) var(--usps-space-20);
+  background-color: var(--usps-color-primary);
+  color: var(--usps-color-white);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.split-toggle {
+  padding: var(--usps-space-12) var(--usps-space-12);
+  border-left: 1px solid var(--usps-color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-primary:focus-visible,
+.split-toggle:focus-visible {
+  outline: 2px solid var(--usps-color-accent-blue);
+  outline-offset: -2px;
+}
+
+.split-primary:hover:not(:disabled),
+.split-toggle:hover:not(:disabled) {
+  background-color: var(--usps-color-gray-hover);
+  color: var(--usps-color-primary);
+}
+
+.usps-split-button.is-open .split-toggle {
+  background-color: var(--usps-color-gray-hover);
+  color: var(--usps-color-primary);
+}
+
+.split-caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid currentColor;
+}
+
+.split-menu {
+  position: absolute;
+  top: calc(100% + 2px);
+  right: 0;
+  min-width: 100%;
+  background-color: var(--usps-color-white);
+  border: 1px solid var(--usps-color-primary);
+  border-radius: var(--usps-radius-xsm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  padding: var(--usps-space-4) 0;
+}
+
+.split-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: var(--usps-space-8) var(--usps-space-16);
+  font-size: var(--usps-font-size-small);
+  color: var(--usps-color-primary);
+  cursor: pointer;
+}
+
+.split-option:hover,
+.split-option:focus-visible {
+  background-color: var(--usps-color-gray-hover);
+}
+
+.usps-split-button.is-disabled .split-primary,
+.usps-split-button.is-disabled .split-toggle,
+.split-primary:disabled,
+.split-toggle:disabled {
+  background-color: var(--usps-color-gray-dark);
+  color: var(--usps-color-gray-text);
+  cursor: not-allowed;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

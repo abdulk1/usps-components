@@ -30,11 +30,29 @@ export namespace Components {
          */
         "variant": 'info' | 'success' | 'warning' | 'error';
     }
+    interface UspsBanner {
+        /**
+          * @default ''
+         */
+        "heading": string;
+        /**
+          * @default ''
+         */
+        "subtitle": string;
+        /**
+          * @default 'hero'
+         */
+        "variant": 'hero' | 'marketing';
+    }
     interface UspsButton {
         /**
           * @default false
          */
         "disabled": boolean;
+        /**
+          * @default false
+         */
+        "selected": boolean;
         /**
           * @default 'md'
          */
@@ -46,7 +64,17 @@ export namespace Components {
         /**
           * @default 'primary'
          */
-        "variant": 'primary' | 'secondary' | 'ecommerce' | 'inactive';
+        "variant": 'primary' | 'secondary' | 'ecommerce' | 'inactive' | 'icon-combo' | 'ecommerce-icon';
+    }
+    interface UspsCallout {
+        /**
+          * @default ''
+         */
+        "heading": string;
+        /**
+          * @default 'plain'
+         */
+        "variant": 'plain' | 'icon';
     }
     interface UspsCard {
         /**
@@ -99,6 +127,20 @@ export namespace Components {
           * @default 'horizontal'
          */
         "orientation": 'horizontal' | 'vertical';
+    }
+    interface UspsDrawer {
+        /**
+          * @default ''
+         */
+        "heading": string;
+        /**
+          * @default false
+         */
+        "open": boolean;
+        /**
+          * @default 'informative'
+         */
+        "variant": 'informative' | 'detailed';
     }
     interface UspsFormField {
         /**
@@ -282,6 +324,24 @@ export namespace Components {
          */
         "size": 'sm' | 'md' | 'lg';
     }
+    interface UspsSplitButton {
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default 'Button Label'
+         */
+        "label": string;
+        /**
+          * @default '[]'
+         */
+        "options": string | SplitOption[];
+        /**
+          * @default 'button'
+         */
+        "type": 'button' | 'submit' | 'reset';
+    }
     interface UspsStack {
         /**
           * @default 'stretch'
@@ -395,6 +455,10 @@ export interface UspsCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUspsCheckboxElement;
 }
+export interface UspsDrawerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUspsDrawerElement;
+}
 export interface UspsInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUspsInputElement;
@@ -410,6 +474,10 @@ export interface UspsRadioCustomEvent<T> extends CustomEvent<T> {
 export interface UspsSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUspsSelectElement;
+}
+export interface UspsSplitButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUspsSplitButtonElement;
 }
 export interface UspsTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -447,6 +515,12 @@ declare global {
         prototype: HTMLUspsBadgeElement;
         new (): HTMLUspsBadgeElement;
     };
+    interface HTMLUspsBannerElement extends Components.UspsBanner, HTMLStencilElement {
+    }
+    var HTMLUspsBannerElement: {
+        prototype: HTMLUspsBannerElement;
+        new (): HTMLUspsBannerElement;
+    };
     interface HTMLUspsButtonElementEventMap {
         "uspsClick": void;
     }
@@ -463,6 +537,12 @@ declare global {
     var HTMLUspsButtonElement: {
         prototype: HTMLUspsButtonElement;
         new (): HTMLUspsButtonElement;
+    };
+    interface HTMLUspsCalloutElement extends Components.UspsCallout, HTMLStencilElement {
+    }
+    var HTMLUspsCalloutElement: {
+        prototype: HTMLUspsCalloutElement;
+        new (): HTMLUspsCalloutElement;
     };
     interface HTMLUspsCardElement extends Components.UspsCard, HTMLStencilElement {
     }
@@ -498,6 +578,23 @@ declare global {
     var HTMLUspsDividerElement: {
         prototype: HTMLUspsDividerElement;
         new (): HTMLUspsDividerElement;
+    };
+    interface HTMLUspsDrawerElementEventMap {
+        "uspsToggle": boolean;
+    }
+    interface HTMLUspsDrawerElement extends Components.UspsDrawer, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLUspsDrawerElementEventMap>(type: K, listener: (this: HTMLUspsDrawerElement, ev: UspsDrawerCustomEvent<HTMLUspsDrawerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLUspsDrawerElementEventMap>(type: K, listener: (this: HTMLUspsDrawerElement, ev: UspsDrawerCustomEvent<HTMLUspsDrawerElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLUspsDrawerElement: {
+        prototype: HTMLUspsDrawerElement;
+        new (): HTMLUspsDrawerElement;
     };
     interface HTMLUspsFormFieldElement extends Components.UspsFormField, HTMLStencilElement {
     }
@@ -598,6 +695,24 @@ declare global {
         prototype: HTMLUspsSpinnerElement;
         new (): HTMLUspsSpinnerElement;
     };
+    interface HTMLUspsSplitButtonElementEventMap {
+        "uspsPrimaryClick": void;
+        "uspsSelect": SplitOption;
+    }
+    interface HTMLUspsSplitButtonElement extends Components.UspsSplitButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLUspsSplitButtonElementEventMap>(type: K, listener: (this: HTMLUspsSplitButtonElement, ev: UspsSplitButtonCustomEvent<HTMLUspsSplitButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLUspsSplitButtonElementEventMap>(type: K, listener: (this: HTMLUspsSplitButtonElement, ev: UspsSplitButtonCustomEvent<HTMLUspsSplitButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLUspsSplitButtonElement: {
+        prototype: HTMLUspsSplitButtonElement;
+        new (): HTMLUspsSplitButtonElement;
+    };
     interface HTMLUspsStackElement extends Components.UspsStack, HTMLStencilElement {
     }
     var HTMLUspsStackElement: {
@@ -671,11 +786,14 @@ declare global {
     interface HTMLElementTagNameMap {
         "usps-alert": HTMLUspsAlertElement;
         "usps-badge": HTMLUspsBadgeElement;
+        "usps-banner": HTMLUspsBannerElement;
         "usps-button": HTMLUspsButtonElement;
+        "usps-callout": HTMLUspsCalloutElement;
         "usps-card": HTMLUspsCardElement;
         "usps-checkbox": HTMLUspsCheckboxElement;
         "usps-container": HTMLUspsContainerElement;
         "usps-divider": HTMLUspsDividerElement;
+        "usps-drawer": HTMLUspsDrawerElement;
         "usps-form-field": HTMLUspsFormFieldElement;
         "usps-grid": HTMLUspsGridElement;
         "usps-icon": HTMLUspsIconElement;
@@ -685,6 +803,7 @@ declare global {
         "usps-radio": HTMLUspsRadioElement;
         "usps-select": HTMLUspsSelectElement;
         "usps-spinner": HTMLUspsSpinnerElement;
+        "usps-split-button": HTMLUspsSplitButtonElement;
         "usps-stack": HTMLUspsStackElement;
         "usps-textarea": HTMLUspsTextareaElement;
         "usps-theme": HTMLUspsThemeElement;
@@ -719,12 +838,30 @@ declare namespace LocalJSX {
          */
         "variant"?: 'info' | 'success' | 'warning' | 'error';
     }
+    interface UspsBanner {
+        /**
+          * @default ''
+         */
+        "heading"?: string;
+        /**
+          * @default ''
+         */
+        "subtitle"?: string;
+        /**
+          * @default 'hero'
+         */
+        "variant"?: 'hero' | 'marketing';
+    }
     interface UspsButton {
         /**
           * @default false
          */
         "disabled"?: boolean;
         "onUspsClick"?: (event: UspsButtonCustomEvent<void>) => void;
+        /**
+          * @default false
+         */
+        "selected"?: boolean;
         /**
           * @default 'md'
          */
@@ -736,7 +873,17 @@ declare namespace LocalJSX {
         /**
           * @default 'primary'
          */
-        "variant"?: 'primary' | 'secondary' | 'ecommerce' | 'inactive';
+        "variant"?: 'primary' | 'secondary' | 'ecommerce' | 'inactive' | 'icon-combo' | 'ecommerce-icon';
+    }
+    interface UspsCallout {
+        /**
+          * @default ''
+         */
+        "heading"?: string;
+        /**
+          * @default 'plain'
+         */
+        "variant"?: 'plain' | 'icon';
     }
     interface UspsCard {
         /**
@@ -790,6 +937,21 @@ declare namespace LocalJSX {
           * @default 'horizontal'
          */
         "orientation"?: 'horizontal' | 'vertical';
+    }
+    interface UspsDrawer {
+        /**
+          * @default ''
+         */
+        "heading"?: string;
+        "onUspsToggle"?: (event: UspsDrawerCustomEvent<boolean>) => void;
+        /**
+          * @default false
+         */
+        "open"?: boolean;
+        /**
+          * @default 'informative'
+         */
+        "variant"?: 'informative' | 'detailed';
     }
     interface UspsFormField {
         /**
@@ -978,6 +1140,26 @@ declare namespace LocalJSX {
          */
         "size"?: 'sm' | 'md' | 'lg';
     }
+    interface UspsSplitButton {
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default 'Button Label'
+         */
+        "label"?: string;
+        "onUspsPrimaryClick"?: (event: UspsSplitButtonCustomEvent<void>) => void;
+        "onUspsSelect"?: (event: UspsSplitButtonCustomEvent<SplitOption>) => void;
+        /**
+          * @default '[]'
+         */
+        "options"?: string | SplitOption[];
+        /**
+          * @default 'button'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+    }
     interface UspsStack {
         /**
           * @default 'stretch'
@@ -1085,11 +1267,14 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "usps-alert": UspsAlert;
         "usps-badge": UspsBadge;
+        "usps-banner": UspsBanner;
         "usps-button": UspsButton;
+        "usps-callout": UspsCallout;
         "usps-card": UspsCard;
         "usps-checkbox": UspsCheckbox;
         "usps-container": UspsContainer;
         "usps-divider": UspsDivider;
+        "usps-drawer": UspsDrawer;
         "usps-form-field": UspsFormField;
         "usps-grid": UspsGrid;
         "usps-icon": UspsIcon;
@@ -1099,6 +1284,7 @@ declare namespace LocalJSX {
         "usps-radio": UspsRadio;
         "usps-select": UspsSelect;
         "usps-spinner": UspsSpinner;
+        "usps-split-button": UspsSplitButton;
         "usps-stack": UspsStack;
         "usps-textarea": UspsTextarea;
         "usps-theme": UspsTheme;
@@ -1113,11 +1299,14 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "usps-alert": LocalJSX.UspsAlert & JSXBase.HTMLAttributes<HTMLUspsAlertElement>;
             "usps-badge": LocalJSX.UspsBadge & JSXBase.HTMLAttributes<HTMLUspsBadgeElement>;
+            "usps-banner": LocalJSX.UspsBanner & JSXBase.HTMLAttributes<HTMLUspsBannerElement>;
             "usps-button": LocalJSX.UspsButton & JSXBase.HTMLAttributes<HTMLUspsButtonElement>;
+            "usps-callout": LocalJSX.UspsCallout & JSXBase.HTMLAttributes<HTMLUspsCalloutElement>;
             "usps-card": LocalJSX.UspsCard & JSXBase.HTMLAttributes<HTMLUspsCardElement>;
             "usps-checkbox": LocalJSX.UspsCheckbox & JSXBase.HTMLAttributes<HTMLUspsCheckboxElement>;
             "usps-container": LocalJSX.UspsContainer & JSXBase.HTMLAttributes<HTMLUspsContainerElement>;
             "usps-divider": LocalJSX.UspsDivider & JSXBase.HTMLAttributes<HTMLUspsDividerElement>;
+            "usps-drawer": LocalJSX.UspsDrawer & JSXBase.HTMLAttributes<HTMLUspsDrawerElement>;
             "usps-form-field": LocalJSX.UspsFormField & JSXBase.HTMLAttributes<HTMLUspsFormFieldElement>;
             "usps-grid": LocalJSX.UspsGrid & JSXBase.HTMLAttributes<HTMLUspsGridElement>;
             "usps-icon": LocalJSX.UspsIcon & JSXBase.HTMLAttributes<HTMLUspsIconElement>;
@@ -1127,6 +1316,7 @@ declare module "@stencil/core" {
             "usps-radio": LocalJSX.UspsRadio & JSXBase.HTMLAttributes<HTMLUspsRadioElement>;
             "usps-select": LocalJSX.UspsSelect & JSXBase.HTMLAttributes<HTMLUspsSelectElement>;
             "usps-spinner": LocalJSX.UspsSpinner & JSXBase.HTMLAttributes<HTMLUspsSpinnerElement>;
+            "usps-split-button": LocalJSX.UspsSplitButton & JSXBase.HTMLAttributes<HTMLUspsSplitButtonElement>;
             "usps-stack": LocalJSX.UspsStack & JSXBase.HTMLAttributes<HTMLUspsStackElement>;
             "usps-textarea": LocalJSX.UspsTextarea & JSXBase.HTMLAttributes<HTMLUspsTextareaElement>;
             "usps-theme": LocalJSX.UspsTheme & JSXBase.HTMLAttributes<HTMLUspsThemeElement>;

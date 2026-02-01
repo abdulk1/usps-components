@@ -1,6 +1,6 @@
 # USPS Design System
 
-A framework-agnostic web components library built with [Stencil](https://stenciljs.com/), implementing the USPS digital style guide. Components are usable in React, Vue, Angular, and vanilla JavaScript applications.
+A framework-agnostic web components library built with [Stencil](https://stenciljs.com/), implementing the USPS digital style guide. Components are usable in React, Vue, Angular, and vanilla JavaScript applications. For React usage, see `react/README.md`.
 
 ## Getting Started
 
@@ -128,6 +128,20 @@ Supported themes: `light` (default), `dark`.
 import { defineCustomElements } from 'usps-components/loader';
 defineCustomElements();
 ```
+
+## Frameworks
+
+### React
+
+React bindings are generated via Stencil’s React output target. See `react/README.md` for setup and usage.
+
+### Vue
+
+Vue bindings are not yet implemented. Track progress in `TODO.md`.
+
+### Angular
+
+Angular bindings are not yet implemented. Track progress in `TODO.md`.
 
 ## Scripts
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/web-components';
+import type { Meta, StoryObj } from '@storybook/web-components-vite';
 
 const defaultOptions = JSON.stringify([
   { label: 'Option 1', value: 'option1' },

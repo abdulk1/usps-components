@@ -1,0 +1,50 @@
+:host {
+  display: block;
+  font-family: var(--usps-font-family);
+}
+
+.usps-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--usps-space-24);
+  align-items: center;
+  padding: var(--usps-space-32);
+  border-radius: var(--usps-radius-sm);
+  background-color: var(--usps-color-gray-light);
+  color: var(--usps-color-primary);
+}
+
+.variant-marketing {
+  background-color: var(--usps-color-white);
+  border: 1px solid var(--usps-color-gray-dark);
+}
+
+.banner-title {
+  font-size: var(--usps-font-size-h2);
+  margin: 0 0 var(--usps-space-12);
+}
+
+.banner-subtitle {
+  margin: 0 0 var(--usps-space-16);
+  font-size: var(--usps-font-size-body);
+  line-height: var(--usps-line-height-body);
+  color: var(--usps-color-gray-text);
+}
+
+.banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--usps-space-12);
+  margin-top: var(--usps-space-16);
+}
+
+.banner-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-media ::slotted(*) {
+  max-width: 100%;
+  border-radius: var(--usps-radius-sm);
+}

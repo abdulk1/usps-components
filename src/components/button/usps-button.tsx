@@ -6,8 +6,11 @@ import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
   shadow: true,
 })
 export class UspsButton {
-  @Prop() variant: 'primary' | 'secondary' | 'ecommerce' | 'inactive' = 'primary';
+  @Prop()
+  variant: 'primary' | 'secondary' | 'ecommerce' | 'inactive' | 'icon-combo' | 'ecommerce-icon' =
+    'primary';
   @Prop() disabled = false;
+  @Prop() selected = false;
   @Prop() size: 'sm' | 'md' | 'lg' = 'md';
   @Prop() type: 'button' | 'submit' | 'reset' = 'button';
 
@@ -26,6 +29,7 @@ export class UspsButton {
         class={{
           'usps-button': true,
           [`variant-${this.variant}`]: true,
+          'is-selected': this.selected,
           [`size-${this.size}`]: true,
         }}
         disabled={this.disabled}

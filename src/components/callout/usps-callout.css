@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  font-family: var(--usps-font-family);
+  color: var(--usps-color-primary);
+}
+
+.usps-callout {
+  background-color: var(--usps-color-white);
+  border-radius: var(--usps-radius-sm);
+  padding: var(--usps-space-24);
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.callout-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--usps-space-12);
+}
+
+.variant-plain .callout-icon {
+  display: none;
+}
+
+.callout-heading {
+  font-size: var(--usps-font-size-h3);
+  margin: 0 0 var(--usps-space-12);
+}
+
+.callout-body {
+  font-size: var(--usps-font-size-body);
+  line-height: var(--usps-line-height-body);
+  color: var(--usps-color-gray-text);
+}

@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
   namespace: 'usps-components',
@@ -20,6 +21,12 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null,
     },
+    reactOutputTarget({
+      componentCorePackage: 'usps-components',
+      proxiesFile: 'react/src/components.ts',
+      outDir: 'react/dist',
+      includeDefineCustomElements: true,
+    }),
   ],
   extras: {
     enableImportInjection: true,
