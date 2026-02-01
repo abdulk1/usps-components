@@ -11,7 +11,12 @@
 }
 
 .variant-informative {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(260px, 1fr);
+  gap: var(--usps-space-24);
   background-color: var(--usps-color-gray-light);
+  padding: var(--usps-space-20);
+  border-radius: var(--usps-radius-sm);
 }
 
 .drawer-header {
@@ -56,4 +61,66 @@
 
 .variant-detailed .drawer-content {
   background-color: var(--usps-color-white);
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--usps-space-12);
+}
+
+.drawer-nav-item {
+  background-color: var(--usps-color-gray-light);
+  border: none;
+  padding: var(--usps-space-12) var(--usps-space-16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  color: var(--usps-color-primary);
+}
+
+.drawer-nav-item:hover {
+  background-color: var(--usps-color-gray-hover);
+}
+
+.drawer-nav-item:focus-visible {
+  outline: 2px solid var(--usps-color-accent-blue);
+  outline-offset: 2px;
+}
+
+.drawer-nav-item.is-active {
+  background-color: var(--usps-color-primary);
+  color: var(--usps-color-white);
+}
+
+.drawer-heading {
+  margin: 0;
+  font-size: var(--usps-font-size-h5);
+}
+
+.drawer-description {
+  margin: var(--usps-space-4) 0 0;
+  color: inherit;
+  font-size: var(--usps-font-size-small);
+}
+
+.drawer-arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid currentColor;
+}
+
+.drawer-panel {
+  background-color: var(--usps-color-gray-light);
+  padding: var(--usps-space-12);
+}
+
+.variant-informative .drawer-content {
+  padding: 0;
+  border: none;
+  color: var(--usps-color-primary);
 }

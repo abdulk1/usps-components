@@ -8,7 +8,6 @@
   display: inline-flex;
   border-radius: var(--usps-radius-xsm);
   border: 2px solid var(--usps-color-primary);
-  overflow: hidden;
 }
 
 .split-primary,
@@ -22,6 +21,14 @@
   color: var(--usps-color-white);
   cursor: pointer;
   line-height: 1;
+}
+
+.split-primary {
+  border-radius: calc(var(--usps-radius-xsm) - 2px) 0 0 calc(var(--usps-radius-xsm) - 2px);
+}
+
+.split-toggle {
+  border-radius: 0 calc(var(--usps-radius-xsm) - 2px) calc(var(--usps-radius-xsm) - 2px) 0;
 }
 
 .split-toggle {

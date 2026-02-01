@@ -29,6 +29,7 @@ npm run storybook
 ```
 
 Storybook runs at `http://localhost:6006` with all component stories, interactive controls, and accessibility checks.
+The published Storybook is deployed to GitHub Pages at `https://<org>.github.io/usps-components/`.
 
 ## Architecture
 

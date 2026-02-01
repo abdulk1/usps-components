@@ -130,9 +130,17 @@ export namespace Components {
     }
     interface UspsDrawer {
         /**
+          * @default 0
+         */
+        "activeIndex": number;
+        /**
           * @default ''
          */
         "heading": string;
+        /**
+          * @default '[]'
+         */
+        "items": string | Array<{ heading: string; description?: string; content: string }>;
         /**
           * @default false
          */
@@ -580,6 +588,7 @@ declare global {
         new (): HTMLUspsDividerElement;
     };
     interface HTMLUspsDrawerElementEventMap {
+        "uspsChange": number;
         "uspsToggle": boolean;
     }
     interface HTMLUspsDrawerElement extends Components.UspsDrawer, HTMLStencilElement {
@@ -940,9 +949,18 @@ declare namespace LocalJSX {
     }
     interface UspsDrawer {
         /**
+          * @default 0
+         */
+        "activeIndex"?: number;
+        /**
           * @default ''
          */
         "heading"?: string;
+        /**
+          * @default '[]'
+         */
+        "items"?: string | Array<{ heading: string; description?: string; content: string }>;
+        "onUspsChange"?: (event: UspsDrawerCustomEvent<number>) => void;
         "onUspsToggle"?: (event: UspsDrawerCustomEvent<boolean>) => void;
         /**
           * @default false

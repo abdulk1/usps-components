@@ -30,6 +30,7 @@
 .variant-primary:hover:not(:disabled) {
   background-color: var(--usps-color-gray-hover);
   color: var(--usps-color-primary);
+  border-color: transparent;
 }
 
 .variant-primary:active:not(:disabled) {
@@ -61,6 +62,7 @@
 .variant-ecommerce:hover:not(:disabled) {
   background-color: var(--usps-color-gray-hover);
   color: var(--usps-color-green);
+  border-color: transparent;
 }
 
 .variant-ecommerce:active:not(:disabled) {
@@ -94,6 +96,7 @@
 .variant-ecommerce-icon:hover:not(:disabled) {
   background-color: var(--usps-color-gray-hover);
   color: var(--usps-color-green);
+  border-color: transparent;
 }
 
 .variant-ecommerce-icon:active:not(:disabled) {

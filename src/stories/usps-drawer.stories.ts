@@ -13,6 +13,15 @@ const meta: Meta = {
       control: { type: 'boolean' },
       description: 'Whether the drawer is expanded',
     },
+    items: {
+      control: { type: 'text' },
+      description:
+        'JSON array of drawer items: [{ "heading": "...", "description": "...", "content": "..." }]',
+    },
+    activeIndex: {
+      control: { type: 'number' },
+      description: 'Selected drawer index (informative)',
+    },
     variant: {
       control: { type: 'select' },
       options: ['informative', 'detailed'],
@@ -27,13 +36,36 @@ type Story = StoryObj;
 export const Informative: Story = {
   args: {
     heading: 'Informative Drawer',
-    open: false,
     variant: 'informative',
+    activeIndex: 0,
+    items: JSON.stringify([
+      {
+        heading: 'Heading',
+        description: 'Description',
+        content:
+          '<p>Active or hover state drawer content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>',
+      },
+      {
+        heading: 'Heading',
+        description: 'Description',
+        content:
+          '<p>Secondary drawer content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>',
+      },
+      {
+        heading: 'Heading',
+        description: 'Description',
+        content:
+          '<p>More drawer content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>',
+      },
+    ]),
   },
   render: (args) => `
-    <usps-drawer heading="${args.heading}" variant="${args.variant}" ${args.open ? 'open' : ''}>
-      This is an informative drawer body. Use it for concise supporting content.
-    </usps-drawer>
+    <usps-drawer
+      heading="${args.heading}"
+      variant="${args.variant}"
+      items='${args.items}'
+      active-index="${args.activeIndex}"
+    ></usps-drawer>
   `,
 };
 

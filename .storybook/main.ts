@@ -7,6 +7,15 @@ const config: StorybookConfig = {
     name: '@storybook/web-components-vite',
     options: {},
   },
+  viteFinal: async (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      return {
+        ...config,
+        base: process.env.STORYBOOK_BASE || '/',
+      };
+    }
+    return config;
+  },
 };
 
 export default config;
