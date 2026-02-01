@@ -37,9 +37,13 @@
 }
 
 .usps-select:focus {
-  outline: none;
+  outline: 2px solid var(--usps-color-accent-blue);
+  outline-offset: 2px;
   border-color: var(--usps-color-primary);
-  box-shadow: 0 0 0 2px rgba(51, 51, 102, 0.2);
+}
+
+.usps-select:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .usps-select:disabled {
@@ -65,4 +69,16 @@
 .usps-select-error {
   font-size: var(--usps-font-size-fine);
   color: var(--usps-color-red);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

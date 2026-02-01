@@ -42,7 +42,8 @@ export class UspsSelect {
         {this.label && (
           <label htmlFor={selectId} class="usps-select-label">
             {this.label}
-            {this.required && <span class="required">*</span>}
+            {this.required && <span class="required" aria-hidden="true">*</span>}
+            {this.required && <span class="visually-hidden">(required)</span>}
           </label>
         )}
         <div class="select-container">

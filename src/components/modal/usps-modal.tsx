@@ -66,11 +66,12 @@ export class UspsModal {
 
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
+    const activeEl = this.el.shadowRoot?.activeElement;
 
-    if (e.shiftKey && document.activeElement === first) {
+    if (e.shiftKey && activeEl === first) {
       e.preventDefault();
       last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
+    } else if (!e.shiftKey && activeEl === last) {
       e.preventDefault();
       first.focus();
     }
@@ -86,7 +87,8 @@ export class UspsModal {
         onKeyDown={this.handleKeydown}
         aria-modal="true"
         role="dialog"
-        aria-labelledby="modal-heading"
+        aria-labelledby={this.heading ? 'modal-heading' : undefined}
+        aria-label={!this.heading ? 'Dialog' : undefined}
       >
         <div class="modal-container" style={{ 'max-width': this.width }}>
           <div class="modal-header">

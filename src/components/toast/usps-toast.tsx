@@ -64,8 +64,8 @@ export class UspsToast {
           [`variant-${this.variant}`]: true,
           [`position-${this.position}`]: true,
         }}
-        role="status"
-        aria-live="polite"
+        role={this.variant === 'error' || this.variant === 'warning' ? 'alert' : 'status'}
+        aria-live={this.variant === 'error' || this.variant === 'warning' ? 'assertive' : 'polite'}
       >
         <div class="toast-content">
           <slot />

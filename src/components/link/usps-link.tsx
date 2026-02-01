@@ -27,6 +27,9 @@ export class UspsLink {
             &#8599;
           </span>
         )}
+        {this.external && (
+          <span class="visually-hidden">(opens in a new tab)</span>
+        )}
       </a>
     );
   }

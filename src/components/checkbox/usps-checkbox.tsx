@@ -38,6 +38,7 @@ export class UspsCheckbox {
             role="checkbox"
             aria-checked={this.checked ? 'true' : 'false'}
             aria-invalid={this.error ? 'true' : undefined}
+            aria-describedby={this.error ? `${checkboxId}-error` : undefined}
             onChange={this.handleChange}
           />
           <span class="checkbox-visual" aria-hidden="true">
@@ -50,7 +51,7 @@ export class UspsCheckbox {
           {this.label && <span class="label-text">{this.label}</span>}
         </label>
         {this.error && (
-          <span class="usps-checkbox-error" role="alert">
+          <span id={`${checkboxId}-error`} class="usps-checkbox-error" role="alert">
             {this.error}
           </span>
         )}

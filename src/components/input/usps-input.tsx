@@ -37,7 +37,8 @@ export class UspsInput {
         {this.label && (
           <label htmlFor={inputId} class="usps-input-label">
             {this.label}
-            {this.required && <span class="required">*</span>}
+            {this.required && <span class="required" aria-hidden="true">*</span>}
+            {this.required && <span class="visually-hidden">(required)</span>}
           </label>
         )}
         <input

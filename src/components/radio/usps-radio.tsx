@@ -38,6 +38,7 @@ export class UspsRadio {
             role="radio"
             aria-checked={this.checked ? 'true' : 'false'}
             aria-invalid={this.error ? 'true' : undefined}
+            aria-describedby={this.error ? `${radioId}-error` : undefined}
             onChange={this.handleChange}
           />
           <span class="radio-visual" aria-hidden="true">
@@ -46,7 +47,7 @@ export class UspsRadio {
           {this.label && <span class="label-text">{this.label}</span>}
         </label>
         {this.error && (
-          <span class="usps-radio-error" role="alert">
+          <span id={`${radioId}-error`} class="usps-radio-error" role="alert">
             {this.error}
           </span>
         )}

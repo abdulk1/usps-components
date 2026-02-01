@@ -37,7 +37,8 @@ export class UspsTextarea {
         {this.label && (
           <label htmlFor={textareaId} class="usps-textarea-label">
             {this.label}
-            {this.required && <span class="required">*</span>}
+            {this.required && <span class="required" aria-hidden="true">*</span>}
+            {this.required && <span class="visually-hidden">(required)</span>}
           </label>
         )}
         <textarea

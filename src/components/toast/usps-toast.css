@@ -53,6 +53,12 @@
   opacity: 1;
 }
 
+.toast-dismiss:focus-visible {
+  outline: 2px solid var(--usps-color-accent-blue);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
 .variant-info {
   background-color: var(--usps-color-alert-info-bg);
   border-left: 4px solid var(--usps-color-alert-info-accent);
